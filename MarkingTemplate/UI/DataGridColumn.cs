@@ -16,12 +16,10 @@ namespace MarkingTemplate
             // Create a ComboBox column separately since we need to allow modification
             comboBoxColumn.HeaderText = "Rating";
             comboBoxColumn.Name = "Rating";
-
+            
             comboBoxColumn.Items.Add("1");
             comboBoxColumn.Items.Add("2");
             comboBoxColumn.Items.Add("3");
-
-
         }
     }
 }

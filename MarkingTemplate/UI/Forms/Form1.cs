@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MarkingTemplate.UI.Forms;
 
 namespace MarkingTemplate
 
@@ -105,8 +106,8 @@ namespace MarkingTemplate
             {
                 // Retrieve data from DB (Category & SubCategory Table) for the current tab index
                 var tabData = loadFromDb.LoadTabData(i + 1); //TabIndex+1 since stored procedure starts from 1
+                tabControl1.TabPages[i].Text = tabData.CategoryId + ". " + tabData.LabelData; //Update tab title to match Title
 
-                
                 if (ControlMaps.TryGetValue(i, out var tabControls)) // Check if the mapping exists for the current tab
                 {
                     LoadingTab LoadingTab = new LoadingTab();
@@ -114,6 +115,7 @@ namespace MarkingTemplate
                     LoadingTab.LoadControls(tabControls, tabData); // Dynamically load data into controls for the current tab
                 }
             }
+
         }
 
 
@@ -124,15 +126,31 @@ namespace MarkingTemplate
 
             if (ControlMaps.TryGetValue(tabIndex, out var controls))
             {
+                if (controls.AverageValueBox.Text != "value" && controls.PercentageValueBox.Text != "value in %") //Dont allow double calculation of values
+                {
+                    MessageBox.Show("Values already generated. Please proceed to next tab",
+                        "Invalid action Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 var weightage = 0.0;
                 foreach (DataGridViewRow row in controls.DataGrid.Rows)
                 {
+                    
+
                     var weightValue = controls.WeightageValue.Text;
 
-                    var selectedValues = fetchComboBoxValue.GetSelectedComboBoxValues(controls.DataGrid);
+                    //TODO: Uncomment while not testing
+                    //var selectedValues = fetchComboBoxValue.GetSelectedComboBoxValues(controls.DataGrid);
 
-                        // Check for null or empty values in ComboBox selections
-                        if (selectedValues.Any(string.IsNullOrEmpty)) //LINQ;if at least one element satisfies the condition
+                    //TODO: Dummy values for testing purposes
+                    var selectedValues = new List<string>();
+                    selectedValues.Add("1");
+                    selectedValues.Add("2");
+                    selectedValues.Add("3");
+
+                    // Check for null or empty values in ComboBox selections
+                    if (selectedValues.Any(string.IsNullOrEmpty)) //LINQ;if at least one element satisfies the condition
                         {
                             MessageBox.Show("Please ensure all ComboBox values are selected before proceeding.",
                                 "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -151,7 +169,6 @@ namespace MarkingTemplate
                 }
                 // Add to ratings list for end computation
                 rating.Add(weightage);
-                Console.WriteLine(weightage);
             }
         }
 
@@ -225,10 +242,6 @@ namespace MarkingTemplate
                     devWeightage = 1.5;
 
                     Form2.instance.LbPercentage.Text = ((ratingValue / devWeightage)*100).ToString("F1");
-                    Console.WriteLine("Rating Value: " + ratingValue);
-                    Console.WriteLine("devWeightage Value: " + devWeightage);
-                    Console.WriteLine("divide Value: " + (ratingValue / devWeightage));
-                    Console.WriteLine("final Value: " + ((ratingValue / devWeightage) * 100));
                     break; 
                 
                 case ("Mid-Dev"):
@@ -244,6 +257,12 @@ namespace MarkingTemplate
                     break;
             }
             form.Show();
+        }
+
+        private void btnResultsView_Click_1(object sender, EventArgs e)
+        {
+            var resultsForm = new ResultsForm();
+            resultsForm.Show();
         }
     }
 }

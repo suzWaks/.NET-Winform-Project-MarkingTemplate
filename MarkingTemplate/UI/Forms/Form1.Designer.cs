@@ -103,6 +103,7 @@
             this.NameField = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnResultsView = new CustomControls.RoundButton();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -156,6 +157,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.devDrop);
+            this.panel1.Controls.Add(this.btnResultsView);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -168,16 +170,17 @@
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.GenValue, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(934, 699);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(931, 699);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(282, 107);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(285, 107);
             this.tableLayoutPanel3.TabIndex = 10;
             // 
             // GenValue
             // 
-            this.GenValue.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.GenValue.BackColor = System.Drawing.SystemColors.Highlight;
+            this.GenValue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GenValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GenValue.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.GenValue.Location = new System.Drawing.Point(3, 3);
@@ -207,6 +210,7 @@
             // 
             // PrevBtn
             // 
+            this.PrevBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PrevBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrevBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PrevBtn.Location = new System.Drawing.Point(3, 3);
@@ -219,6 +223,7 @@
             // 
             // NextBtn
             // 
+            this.NextBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.NextBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NextBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NextBtn.Location = new System.Drawing.Point(211, 3);
@@ -266,7 +271,6 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1243, 536);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "1. Programming Competency";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
@@ -409,7 +413,6 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1243, 536);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "2. Problem-Solving Skills";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
@@ -553,7 +556,6 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1243, 536);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "3. Coding";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel4
@@ -697,7 +699,6 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(1243, 536);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "4. Interpersonal and Professional Skills";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel6
@@ -841,7 +842,6 @@
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(1243, 536);
             this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "5. Understanding and Adherence to Scrum Principles";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel7
@@ -986,7 +986,6 @@
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(1243, 536);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "6. Tools Experties";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel8
@@ -1126,6 +1125,7 @@
             // finalResult
             // 
             this.finalResult.BackColor = System.Drawing.Color.IndianRed;
+            this.finalResult.Cursor = System.Windows.Forms.Cursors.Hand;
             this.finalResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.finalResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.finalResult.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -1148,6 +1148,8 @@
             // 
             // NameField
             // 
+            this.NameField.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.NameField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameField.Location = new System.Drawing.Point(661, 41);
             this.NameField.Name = "NameField";
@@ -1175,6 +1177,27 @@
             this.label1.Size = new System.Drawing.Size(183, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "Choose Developer Level:";
+            // 
+            // btnResultsView
+            // 
+            this.btnResultsView.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnResultsView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnResultsView.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btnResultsView.BorderRadius = 15;
+            this.btnResultsView.BorderSize = 2;
+            this.btnResultsView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnResultsView.FlatAppearance.BorderSize = 0;
+            this.btnResultsView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResultsView.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResultsView.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnResultsView.Location = new System.Drawing.Point(1119, 28);
+            this.btnResultsView.Name = "btnResultsView";
+            this.btnResultsView.Size = new System.Drawing.Size(130, 47);
+            this.btnResultsView.TabIndex = 9;
+            this.btnResultsView.Text = "Check Results";
+            this.btnResultsView.TextColor = System.Drawing.SystemColors.Highlight;
+            this.btnResultsView.UseVisualStyleBackColor = false;
+            this.btnResultsView.Click += new System.EventHandler(this.btnResultsView_Click_1);
             // 
             // MarkingTemplate
             // 
@@ -1303,6 +1326,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label PerctValue6;
         private System.Windows.Forms.Button finalResult;
+        private CustomControls.RoundButton btnResultsView;
     }
 }
 

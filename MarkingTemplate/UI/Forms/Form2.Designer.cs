@@ -37,7 +37,10 @@
             this.FinalPercentage = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSaveToDB = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -65,6 +68,7 @@
             this.tableLayoutPanel1.Controls.Add(this.FinalPercentage, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.label4, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 4, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -159,6 +163,35 @@
             this.label4.Text = "Percentage";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.btnSaveToDB, 0, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(565, 387);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(167, 119);
+            this.tableLayoutPanel2.TabIndex = 6;
+            // 
+            // btnSaveToDB
+            // 
+            this.btnSaveToDB.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnSaveToDB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveToDB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSaveToDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveToDB.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSaveToDB.Location = new System.Drawing.Point(3, 32);
+            this.btnSaveToDB.Name = "btnSaveToDB";
+            this.btnSaveToDB.Size = new System.Drawing.Size(161, 53);
+            this.btnSaveToDB.TabIndex = 0;
+            this.btnSaveToDB.Text = "Save Data";
+            this.btnSaveToDB.UseVisualStyleBackColor = false;
+            this.btnSaveToDB.Click += new System.EventHandler(this.btnSaveToDB_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -175,6 +208,7 @@
             this.Text = "Result";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -189,5 +223,7 @@
         private System.Windows.Forms.Label FinalPercentage;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button btnSaveToDB;
     }
 }
